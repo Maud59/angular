@@ -1,0 +1,50 @@
+<!--Exercice : Composant avec : 
+- Champs textarea avec un compteur de caratère
+- Quand le nombre de caratère atteint 140, la bordure devient rouge et il n'est plus possible d'écrire
+- un message d'erreur s'affiche en dessous du text-area 
+- bouton qui permet de valider, cliquable à partir 1 caractère.-->
+<div class='container'>
+  <!--<div class="row">
+    <div class="col-md-8">
+      <app-hello></app-hello> appel de notre composant
+    </div>
+      <div class="col-md-4">
+      </div>
+  </div>
+</div>-->
+  <app-toggle-box>
+    <p>Hello Transclusion</p>
+  </app-toggle-box>
+<!--Notre template est appelé 2 fois, mais le contenu varie dans notre balise. C'est notre template qui fera le nécessaire pour prendre le contenu et l'adapter-->
+  <app-toggle-box>
+    <h5>Hello paragraphe 2</h5>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, molestiae.</p>
+  </app-toggle-box>
+  <!-- <app-area [size]="40"></app-area> -->
+  <app-area [nomButton]="'Envoyer'" (onMessage)='add($event)'></app-area>
+  <!--Le onMessage = alias du area.component.ts
+ Le add = fonction dans app.component.ts-->
+  <p>Vous avez {{compteur}} messages</p>
+  <button id= 'allSuppr' type='submit'class="btn btn-info mt-3" (click)="deleteAll()">Tout supprimer</button>
+
+  <!-- Appel de notre directive appTest avec notre constructeur de div -->
+  <div *ngFor='let msg of messages, let i=index' appTest [message]='msg'>
+    <p>Message : {{msg.texte}}</p>
+    
+    <p>Date : {{msg.date | date :'short'}}</p>
+    <!--Short permet d'avoir un format date-->
+    <p>Envoi : {{msg.date | dateDistance }}</p>
+    <div class='rating'>
+      <div class="far fa-star"></div>
+      <div class="far fa-star"></div>
+      <div class="far fa-star"></div>
+      <div class="far fa-star"></div>
+      <div class="far fa-star"></div> 
+    </div>
+    <br>
+    <button id ='unitSuppr' type='submit'class="btn btn-info mt-3" (click)="delete(i)">Supprimer</button>
+  </div>
+
+</div>
+
+<!--Créer une ligne d'étoiles d'avis, colorer les étoiles et lors du click, actionne les étoiles jusqu'à celle sélectionnée-->

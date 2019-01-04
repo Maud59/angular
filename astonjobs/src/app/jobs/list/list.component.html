@@ -1,0 +1,15 @@
+
+<mat-card>
+      <ul *ngFor="let job of jobs; let i=index">
+      <mat-card-title>{{job.title}}</mat-card-title>
+      <mat-card-subtitle>{{job.company}}</mat-card-subtitle>
+      <mat-card-content>
+            <li>City : {{job.city}}</li>
+            <li>Zipcode : {{job.zipcode}}</li>
+            <li>Description : {{job.description}}</li>
+            <li>Type de contrat : {{job.contract_type}}</li>
+            <li>Date de début : {{job.start_date}}</li>
+      </mat-card-content>
+      <mat-card-footer>{{job.publishedDate}}</mat-card-footer>
+</ul>
+</mat-card>

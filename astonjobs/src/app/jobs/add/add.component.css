@@ -1,0 +1,17 @@
+mat-card{
+      margin:auto;
+      text-align:center
+}
+.form-fields {
+      margin:auto;
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+    }
+    .sauvegarder{
+          background-color:indianred
+    }
+    mat-card-title{
+          color:indianred
+
+    }

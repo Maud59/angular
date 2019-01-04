@@ -1,0 +1,15 @@
+{
+  "jobs": [
+    {
+      "title": "Recherche développeur Fullstack",
+      "company": "Nutella",
+      "city": "Lille",
+      "zipcode": "59100",
+      "description": "Coucou",
+      "contractType": 2,
+      "startDate": "2018-12-20T23:00:00.000Z",
+      "publishedDate": "",
+      "id": 2
+    }
+  ]
+}

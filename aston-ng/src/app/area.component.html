@@ -1,0 +1,16 @@
+<div class="container mt-3">
+      <h1>Ecrivez-nous un petit mot</h1>
+      <textarea 
+            class="form-control is-invalid" 
+            rows='3' 
+            [ngClass]="{'is-invalid': isValidMaxLength()}"
+            [(ngModel)]="texte" 
+            #compte 
+            [maxLength]="tailleMax"
+            [style.border-color]="taille > 139 ?'red' :'none'"></textarea>
+       <div class='clearfix'>
+            <p class="helper" *ngIf="isValidMaxLength()">Le nombre de caractère a atteint la limite</p>
+            <p class ='float-right'>{{texte.length}} Caracteres / {{compte.maxLength}}</p>
+            <button (click)="send()" type='submit'class="btn btn-info mt-3" [disabled]="!texte">{{nomButton}}</button>
+      </div>
+</div>

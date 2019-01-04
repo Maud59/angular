@@ -1,0 +1,14 @@
+.alert-err{
+      background-color: rgb(235, 187, 187);
+      border : 1px solid indianred;
+      color:indianred
+}
+.alert{
+      margin-bottom:10px;
+}
+
+.alert-succes{
+      background-color: rgb(224, 235, 187);
+      border : 1px solid rgb(43, 149, 10);
+      color: rgb(43, 149, 10);
+}

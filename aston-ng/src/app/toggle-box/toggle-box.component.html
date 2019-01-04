@@ -1,0 +1,7 @@
+<h3 (click)="visible=!visible">{{visible ?'Afficher' : 'Cacher'}}</h3>
+<p [hidden]="visible">
+    <ng-content></ng-content> <!-- Va aller chercher le contenu ajouté dans notre app-toggle-box dans le fichier app.component.html-->
+</p>
+ <!-- visible est undefined dans un premier lieu
+lors du premier click, le visible undefined devient le contraire du visible soit false
+ensuite il redevient le contraire de false, soit true. ETC ... --> 
